@@ -14,6 +14,7 @@
 		811EB2A520B6F86A009814D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811EB2A320B6F86A009814D5 /* LaunchScreen.storyboard */; };
 		811EB2B720B75C5E009814D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811EB2B620B75C5D009814D5 /* Assets.xcassets */; };
 		811EB2B920B75ED9009814D5 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB2B820B75ED9009814D5 /* Stopwatch.swift */; };
+		811EB2BD20B771C3009814D5 /* SaveTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		811EB2A620B6F86A009814D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811EB2B620B75C5D009814D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		811EB2B820B75ED9009814D5 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveTimeViewController.swift; path = /Users/alberttagirov/Documents/XcodeProjects/Stopwatch/Stopwatch/SaveTimeViewController.swift; sourceTree = "<absolute>"; };
 		8C0D4AB51F1ABE836A761E1E /* Pods_Stopwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stopwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 			children = (
 				811EB29A20B6F868009814D5 /* AppDelegate.swift */,
 				811EB29C20B6F868009814D5 /* TimerViewController.swift */,
+				811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */,
 				811EB2B820B75ED9009814D5 /* Stopwatch.swift */,
 				811EB2B620B75C5D009814D5 /* Assets.xcassets */,
 				811EB29E20B6F868009814D5 /* Main.storyboard */,
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811EB2BD20B771C3009814D5 /* SaveTimeViewController.swift in Sources */,
 				811EB29D20B6F868009814D5 /* TimerViewController.swift in Sources */,
 				811EB2B920B75ED9009814D5 /* Stopwatch.swift in Sources */,
 				811EB29B20B6F868009814D5 /* AppDelegate.swift in Sources */,

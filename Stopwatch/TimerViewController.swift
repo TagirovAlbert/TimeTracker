@@ -37,7 +37,6 @@ class TimerViewController: UIViewController {
             let seconds = Int(watch.elapsTime.truncatingRemainder(dividingBy: 60))
             let tenOfSeconds = Int((watch.elapsTime * 10).truncatingRemainder(dividingBy: 10))
             timerLabel.text = String(format: "%02d:%02d.%d", minutes,seconds,tenOfSeconds)
-            print(timerLabel.text)
         }else{
             timer.invalidate()
         }
@@ -50,8 +49,9 @@ class TimerViewController: UIViewController {
         if watch.isRunning{
             watch.stop()
             startStopButton.setImage(UIImage(named: "start"), for: .normal)
-            restartButton.isHidden = false
-            pauseButton.isHidden = false
+            performSegue(withIdentifier: "saveWorkItem", sender: nil)
+      //      restartButton.isHidden = false
+      //      pauseButton.isHidden = false
         }else{
             timerStart()
         startStopButton.setImage(UIImage(named: "stop"), for: .normal)
@@ -65,13 +65,27 @@ class TimerViewController: UIViewController {
     
     
     @IBAction func restart(_ sender: Any) {
-        watch.stop()
-        timerStart()
+      //  watch.stop()
+      //  timerStart()
     }
     
     
     @IBAction func pauseAction(_ sender: Any) {
     }
+    
+
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "saveWorkItem"{
+            let vc = segue.destination as! SaveTimeViewController
+            vc.timeOfItem = watch.elapsTime
+        }
+    }
+    
+    
+    
+    
 
 
 }
