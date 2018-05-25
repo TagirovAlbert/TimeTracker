@@ -73,13 +73,21 @@ class TimerViewController: UIViewController {
     @IBAction func pauseAction(_ sender: Any) {
     }
     
-
+    
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
+        if segue.source is SaveTimeViewController{
+            timerLabel.text = "00:00.0"
+            
+        }
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveWorkItem"{
-            let vc = segue.destination as! SaveTimeViewController
-            vc.timeOfItem = watch.elapsTime
+            let vc = segue.destination as! UINavigationController
+            let saveVC = vc.viewControllers.first as! SaveTimeViewController
+            saveVC.timeOfItem = watch.elapsTime
+            saveVC.timeOfItemString = "Ваше время: \(timerLabel.text!)"
         }
     }
     
