@@ -11,7 +11,7 @@ import UIKit
 class TimerViewController: UIViewController {
     
     let watch = Stopwatch()
-
+    var currTimer: TimeInterval?
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     
@@ -47,6 +47,7 @@ class TimerViewController: UIViewController {
     @IBAction func startStopAction(_ sender: Any) {
         
         if watch.isRunning{
+            currTimer = watch.elapsTime
             watch.stop()
             startStopButton.setImage(UIImage(named: "start"), for: .normal)
             performSegue(withIdentifier: "saveWorkItem", sender: nil)
@@ -93,7 +94,7 @@ class TimerViewController: UIViewController {
         if segue.identifier == "saveWorkItem"{
             let vc = segue.destination as! UINavigationController
             let saveVC = vc.viewControllers.first as! SaveTimeViewController
-            saveVC.timeOfItem = watch.elapsTime
+            saveVC.timeOfItem = currTimer
             saveVC.timeOfItemString = "Ваше время: \(timerLabel.text!)"
         }
     }

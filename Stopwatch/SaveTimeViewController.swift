@@ -37,7 +37,7 @@ class SaveTimeViewController: UIViewController {
         let zeroView = UIView(frame: .zero)
         zeroView.backgroundColor = UIColor.black
         tableView.tableFooterView = zeroView
-        
+        print(realm.configuration.fileURL?.absoluteString)
         timerLable.text = timeOfItemString
         super.viewDidLoad()
 
@@ -72,6 +72,11 @@ class SaveTimeViewController: UIViewController {
        try! realm.write {
             let workItem = WorkItem()
             workItem.task = tasks[selectedIndex!]
+        let minutes = Int(timeOfItem / 60)
+        let seconds = Int(timeOfItem.truncatingRemainder(dividingBy: 60))
+        let tenOfSeconds = Int((timeOfItem * 10).truncatingRemainder(dividingBy: 10))
+        let str = String(format: "%02d:%02d.%d", minutes,seconds,tenOfSeconds)
+        print(str)
             workItem.timer = timeOfItem
             realm.add(workItem)
         }
