@@ -6,27 +6,50 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SaveTimeViewController: UIViewController {
     
     var timeOfItem: TimeInterval!
     var timeOfItemString: String!
+    var selectedIndex: Int?{
+        willSet{
+            if newValue == nil{
+                saveButton.isHidden = true
+            }else{
+                saveButton.isHidden = false
+            }
+        }
+    }
+    let realm = try! Realm()
+    lazy var tasks: Results<Task> = { self.realm.objects(Task.self) }()
     
     @IBOutlet weak var timerLable: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var taskArr = ["Объяснить функционал", "Развернуть среду", "Составить таски"]
-
+   
     @IBOutlet weak var addNewTaskButton: UIButton!
     
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
-        tableView.tableFooterView = UIView(frame: .zero)
+        saveButton.isHidden = true
+        populateDefaultTasks()
+        let zeroView = UIView(frame: .zero)
+        zeroView.backgroundColor = UIColor.black
+        tableView.tableFooterView = zeroView
+        
         timerLable.text = timeOfItemString
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        if let index = tableView.indexPathForSelectedRow{
+//            tableView.deselectRow(at: index, animated: true)
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,23 +68,28 @@ class SaveTimeViewController: UIViewController {
     
     
     @IBAction func saveNewWorkItem(_ sender: Any) {
+        
+       try! realm.write {
+            let workItem = WorkItem()
+            workItem.task = tasks[selectedIndex!]
+            workItem.timer = timeOfItem
+            realm.add(workItem)
+        }
+        
+        performSegue(withIdentifier: "alertWithSaveVC2WithSegue", sender: self)
+        
     }
 
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-
 }
 
 extension SaveTimeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
+        selectedIndex = indexPath.row
     }
+    
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
@@ -69,13 +97,18 @@ extension SaveTimeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArr.count
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Task", for: indexPath)
         cell.textLabel?.textColor = .white
-        cell.textLabel?.text = taskArr[indexPath.row]
+        if indexPath.row == selectedIndex{
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
+        cell.textLabel?.text = tasks[indexPath.row].name
         return cell
     }
     
@@ -88,7 +121,13 @@ extension SaveTimeViewController: UITableViewDelegate, UITableViewDataSource{
         let addTask = UIAlertAction(title: "Добавить", style: .default) { (alert) in
             let newTaskField = alertController.textFields![0] as UITextField
             if let newTask = newTaskField.text{
-                self.taskArr.append(newTask)
+                try! self.realm.write {
+                    let task = Task()
+                    task.name = newTask
+                    self.realm.add(task)
+                }
+                self.tasks = self.realm.objects(Task.self)
+                self.selectedIndex = self.tasks.count - 1
                 self.tableView.reloadData()
             }else{
                 self.alertInfo(message: "Заполните поле")
@@ -111,6 +150,31 @@ extension SaveTimeViewController: UITableViewDelegate, UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
+    
+    
+    func populateDefaultTasks(){
+        if tasks.count == 0{
+            try! realm.write {
+                let taskArr = ["Объяснить функционал", "Развернуть среду", "Составить таски"]
+                for elem in taskArr{
+                    let newTask = Task()
+                    newTask.name = elem
+                    self.realm.add(newTask)
+                }
+            }
+            
+            tasks = realm.objects(Task.self)
+        }
+    }
+    
+    
+    
+    
+//    func deselectSelectedCell(){
+//        if let index = tableView.indexPathForSelectedRow{
+//            tableView.deselectRow(at: index, animated: true)
+//        }
+//    }
     
     
 }

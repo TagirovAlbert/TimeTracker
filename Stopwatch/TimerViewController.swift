@@ -81,6 +81,13 @@ class TimerViewController: UIViewController {
         }
     }
     
+    @IBAction func alertWithSaveVC2(segue: UIStoryboardSegue){
+        if let sourceVC = segue.source as? SaveTimeViewController{
+            timerLabel.text = "00:00.0"
+            saveAlert(timer: sourceVC.timeOfItemString, task: sourceVC.tasks[sourceVC.selectedIndex!].name)
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveWorkItem"{
@@ -89,6 +96,14 @@ class TimerViewController: UIViewController {
             saveVC.timeOfItem = watch.elapsTime
             saveVC.timeOfItemString = "Ваше время: \(timerLabel.text!)"
         }
+    }
+    
+    
+    private func saveAlert(timer: String, task: String){
+        let alert = UIAlertController(title: "Сохранено", message: "\(timer). Ваш таск: \(task). Просмотреть результаты вы можете в Истории", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
     
     

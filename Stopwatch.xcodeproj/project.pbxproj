@@ -8,27 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		1EEB67763A04B1CDA7ADDC56 /* Pods_Stopwatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0D4AB51F1ABE836A761E1E /* Pods_Stopwatch.framework */; };
+		81174F4620B9D3AC00678C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81174F4520B9D3AC00678C48 /* Assets.xcassets */; };
 		811EB29B20B6F868009814D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB29A20B6F868009814D5 /* AppDelegate.swift */; };
 		811EB29D20B6F868009814D5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB29C20B6F868009814D5 /* TimerViewController.swift */; };
 		811EB2A020B6F868009814D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811EB29E20B6F868009814D5 /* Main.storyboard */; };
 		811EB2A520B6F86A009814D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811EB2A320B6F86A009814D5 /* LaunchScreen.storyboard */; };
-		811EB2B720B75C5E009814D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811EB2B620B75C5D009814D5 /* Assets.xcassets */; };
 		811EB2B920B75ED9009814D5 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB2B820B75ED9009814D5 /* Stopwatch.swift */; };
 		811EB2BD20B771C3009814D5 /* SaveTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */; };
+		811EB2C020B8729C009814D5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB2BF20B8729C009814D5 /* Task.swift */; };
+		811EB2C220B872A9009814D5 /* WorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811EB2C120B872A9009814D5 /* WorkItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26C8463AC1BA61624C26A3DF /* Pods-Stopwatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.release.xcconfig"; sourceTree = "<group>"; };
 		3630DEDC28232D77056FB9ED /* Pods-Stopwatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stopwatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stopwatch/Pods-Stopwatch.debug.xcconfig"; sourceTree = "<group>"; };
+		81174F4520B9D3AC00678C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		811EB29720B6F868009814D5 /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811EB29A20B6F868009814D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		811EB29C20B6F868009814D5 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		811EB29F20B6F868009814D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		811EB2A420B6F86A009814D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811EB2A620B6F86A009814D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		811EB2B620B75C5D009814D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		811EB2B820B75ED9009814D5 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveTimeViewController.swift; path = /Users/alberttagirov/Documents/XcodeProjects/Stopwatch/Stopwatch/SaveTimeViewController.swift; sourceTree = "<absolute>"; };
+		811EB2BF20B8729C009814D5 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		811EB2C120B872A9009814D5 /* WorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItem.swift; sourceTree = "<group>"; };
 		8C0D4AB51F1ABE836A761E1E /* Pods_Stopwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stopwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -68,13 +72,23 @@
 				811EB29A20B6F868009814D5 /* AppDelegate.swift */,
 				811EB29C20B6F868009814D5 /* TimerViewController.swift */,
 				811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */,
+				811EB2BE20B87284009814D5 /* Models */,
 				811EB2B820B75ED9009814D5 /* Stopwatch.swift */,
-				811EB2B620B75C5D009814D5 /* Assets.xcassets */,
+				81174F4520B9D3AC00678C48 /* Assets.xcassets */,
 				811EB29E20B6F868009814D5 /* Main.storyboard */,
 				811EB2A320B6F86A009814D5 /* LaunchScreen.storyboard */,
 				811EB2A620B6F86A009814D5 /* Info.plist */,
 			);
 			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		811EB2BE20B87284009814D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				811EB2BF20B8729C009814D5 /* Task.swift */,
+				811EB2C120B872A9009814D5 /* WorkItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		941AF246CD45B01AF1C908B0 /* Pods */ = {
@@ -156,7 +170,7 @@
 			files = (
 				811EB2A520B6F86A009814D5 /* LaunchScreen.storyboard in Resources */,
 				811EB2A020B6F868009814D5 /* Main.storyboard in Resources */,
-				811EB2B720B75C5E009814D5 /* Assets.xcassets in Resources */,
+				81174F4620B9D3AC00678C48 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +224,10 @@
 			files = (
 				811EB2BD20B771C3009814D5 /* SaveTimeViewController.swift in Sources */,
 				811EB29D20B6F868009814D5 /* TimerViewController.swift in Sources */,
+				811EB2C020B8729C009814D5 /* Task.swift in Sources */,
 				811EB2B920B75ED9009814D5 /* Stopwatch.swift in Sources */,
 				811EB29B20B6F868009814D5 /* AppDelegate.swift in Sources */,
+				811EB2C220B872A9009814D5 /* WorkItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
