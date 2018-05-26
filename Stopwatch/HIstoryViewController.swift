@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import FSCalendar
 
-class HIstoryViewController: UIViewController {
-
+class HistoryViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var calendar: FSCalendar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +29,19 @@ class HIstoryViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+//extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//    }
+//    
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//    }
+//    
+//    
+//}
