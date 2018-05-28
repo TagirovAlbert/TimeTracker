@@ -30,6 +30,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
     
     override func viewDidLoad() {
+        
         calendar.select(Date())
         getWorkItemsInDay(date: Date())
         let zeroView = UIView(frame: .zero)
@@ -65,7 +66,7 @@ class HistoryViewController: UIViewController {
         selectDayWorkItems.forEach { (workItem) in
             sumOfTimeForWorkItem(itemWork: workItem)
         }
-        workItemsInDay = tempWorkItems.sorted( by: { $0.1 < $1.1 })
+        workItemsInDay = tempWorkItems.sorted( by: { $0.1 > $1.1 })
     }
     
     
