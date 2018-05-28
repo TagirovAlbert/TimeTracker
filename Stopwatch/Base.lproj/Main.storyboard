@@ -38,37 +38,13 @@
                                             <action selector="startStopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwQ-Ts-lOc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8B-u4-se1">
-                                        <rect key="frame" x="271" y="409" width="74" height="74"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="B8B-u4-se1" secondAttribute="height" multiplier="1:1" id="ptv-qV-Dvu"/>
-                                        </constraints>
-                                        <state key="normal" image="restart"/>
-                                        <connections>
-                                            <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SfQ-eN-Jij"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qe-bB-9mC">
-                                        <rect key="frame" x="30" y="409" width="74" height="74"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="8qe-bB-9mC" secondAttribute="height" multiplier="1:1" id="iaa-hc-dfT"/>
-                                        </constraints>
-                                        <state key="normal" image="pause"/>
-                                        <connections>
-                                            <action selector="pauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWR-59-nrb"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="BaE-Dd-oaf" firstAttribute="top" secondItem="H8d-Ca-csG" secondAttribute="top" constant="117" id="2MP-9l-eXj"/>
                                     <constraint firstItem="wj0-Ny-rTM" firstAttribute="centerX" secondItem="H8d-Ca-csG" secondAttribute="centerX" id="4rG-P6-sJw"/>
-                                    <constraint firstItem="wj0-Ny-rTM" firstAttribute="leading" secondItem="8qe-bB-9mC" secondAttribute="trailing" constant="35" id="BBR-Ft-cya"/>
-                                    <constraint firstItem="8qe-bB-9mC" firstAttribute="centerY" secondItem="wj0-Ny-rTM" secondAttribute="centerY" id="W8E-Ky-2pM"/>
                                     <constraint firstItem="BaE-Dd-oaf" firstAttribute="centerX" secondItem="H8d-Ca-csG" secondAttribute="centerX" id="XRc-JW-hov"/>
-                                    <constraint firstItem="8qe-bB-9mC" firstAttribute="top" secondItem="B8B-u4-se1" secondAttribute="top" id="cBF-RC-bfT"/>
                                     <constraint firstAttribute="bottom" secondItem="wj0-Ny-rTM" secondAttribute="bottom" constant="59" id="qfp-VS-4qH"/>
-                                    <constraint firstItem="B8B-u4-se1" firstAttribute="leading" secondItem="wj0-Ny-rTM" secondAttribute="trailing" constant="35" id="sKP-RJ-ap7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -83,8 +59,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Тайм трекер" id="SxJ-af-nxx"/>
                     <connections>
-                        <outlet property="pauseButton" destination="8qe-bB-9mC" id="370-wc-M1h"/>
-                        <outlet property="restartButton" destination="B8B-u4-se1" id="8gr-EY-8xN"/>
                         <outlet property="startStopButton" destination="wj0-Ny-rTM" id="bmv-to-tMT"/>
                         <outlet property="timerLabel" destination="BaE-Dd-oaf" id="7hI-hy-Syi"/>
                         <segue destination="YO2-7Z-Rjs" kind="presentation" identifier="saveWorkItem" id="6C9-EI-FoA"/>
@@ -330,7 +304,7 @@
                     <navigationItem key="navigationItem" title="История" id="I3T-SX-YKS"/>
                     <connections>
                         <outlet property="calendar" destination="ued-tw-7Vd" id="7Es-m1-mqf"/>
-                        <outlet property="tableView" destination="Mkg-BM-bvn" id="pOc-lE-pCT"/>
+                        <outlet property="tableView" destination="Mkg-BM-bvn" id="VLA-YG-nyz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnB-ch-qpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -380,8 +354,6 @@
     </scenes>
     <resources>
         <image name="history" width="30" height="30"/>
-        <image name="pause" width="74" height="74"/>
-        <image name="restart" width="74" height="74"/>
         <image name="save" width="111" height="111"/>
         <image name="start" width="97" height="97"/>
         <image name="stopwatch" width="30" height="30"/>
