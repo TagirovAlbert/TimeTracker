@@ -13,4 +13,12 @@ class WorkItem: Object{
     @objc dynamic var task: Task!
     @objc dynamic var timer: TimeInterval = TimeInterval()
     @objc dynamic var date: Date = Date()
+    
+    
+    convenience init(task: Task, timer: TimeInterval, date: Date) {
+        self.init()
+        self.task = task
+        self.timer = timer
+        self.date = date
+    }
 }

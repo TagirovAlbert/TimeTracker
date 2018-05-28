@@ -34,10 +34,10 @@ class SaveTimeViewController: UIViewController {
     override func viewDidLoad() {
         saveButton.isHidden = true
         populateDefaultTasks()
+        print(realm.configuration.fileURL?.absoluteString)
         let zeroView = UIView(frame: .zero)
         zeroView.backgroundColor = UIColor.black
         tableView.tableFooterView = zeroView
-        print(realm.configuration.fileURL?.absoluteString)
         timerLable.text = timeOfItemString
         super.viewDidLoad()
 
@@ -84,7 +84,6 @@ class SaveTimeViewController: UIViewController {
         performSegue(withIdentifier: "alertWithSaveVC2WithSegue", sender: self)
         
     }
-
     
 }
 

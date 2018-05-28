@@ -244,15 +244,48 @@
                                     <constraint firstAttribute="height" constant="247" id="ICK-WH-PIy"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="V1W-T8-Rdr">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="workItemCell" rowHeight="60" id="VnK-sb-RHU" customClass="WorkItemTableViewCell" customModule="Stopwatch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V1W-T8-Rdr" id="722-Wf-bsP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VnK-sb-RHU" id="uYz-BL-Ijl">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRN-Bg-Fym">
+                                                    <rect key="frame" x="20" y="20" width="190" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="190" id="ylp-4c-h0J"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbT-3v-J6a">
+                                                    <rect key="frame" x="255" y="20" width="87" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="87" id="3Yy-K8-fMS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="DbT-3v-J6a" firstAttribute="centerY" secondItem="VnK-sb-RHU" secondAttribute="centerY" id="06A-W6-7yx"/>
+                                            <constraint firstItem="aRN-Bg-Fym" firstAttribute="leading" secondItem="VnK-sb-RHU" secondAttribute="leading" constant="20" id="9Wo-Bw-GPO"/>
+                                            <constraint firstAttribute="trailing" secondItem="DbT-3v-J6a" secondAttribute="trailing" constant="20" id="Ddb-C6-FF9"/>
+                                            <constraint firstItem="aRN-Bg-Fym" firstAttribute="centerY" secondItem="VnK-sb-RHU" secondAttribute="centerY" id="Syy-z4-LoK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="interval" destination="DbT-3v-J6a" id="Tjz-S5-nUK"/>
+                                            <outlet property="taskName" destination="aRN-Bg-Fym" id="29I-vB-hSS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n70-YK-F5h" id="Zxu-Hg-c5C"/>
+                                    <outlet property="delegate" destination="n70-YK-F5h" id="uzX-On-VHx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -267,9 +300,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yfp-Aw-zW5"/>
                     </view>
-                    <navigationItem key="navigationItem" id="I3T-SX-YKS"/>
+                    <navigationItem key="navigationItem" title="История" id="I3T-SX-YKS"/>
                     <connections>
                         <outlet property="calendar" destination="ued-tw-7Vd" id="7Es-m1-mqf"/>
+                        <outlet property="tableView" destination="Mkg-BM-bvn" id="pOc-lE-pCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnB-ch-qpS" userLabel="First Responder" sceneMemberID="firstResponder"/>

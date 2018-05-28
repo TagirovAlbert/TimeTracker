@@ -12,6 +12,10 @@ import RealmSwift
 class Task: Object{
     @objc dynamic var name: String = ""
     
+    convenience init(name:String) {
+        self.init()
+        self.name = name
+    }
     
     override static func primaryKey() -> String?{
         return "name"
