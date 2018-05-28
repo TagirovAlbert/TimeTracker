@@ -121,6 +121,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bP9-Ov-A8I">
                                 <rect key="frame" x="0.0" y="109" width="375" height="385"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Task" id="8OZ-Lo-o2q">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -129,7 +130,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0019035532994924331" green="0.0019035532994924331" blue="0.0019035532994924331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
@@ -243,8 +244,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="247" id="ICK-WH-PIy"/>
                                 </constraints>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="workItemCell" rowHeight="60" id="VnK-sb-RHU" customClass="WorkItemTableViewCell" customModule="Stopwatch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="workItemCell" rowHeight="60" id="VnK-sb-RHU" customClass="WorkItemTableViewCell" customModule="Stopwatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VnK-sb-RHU" id="uYz-BL-Ijl">
@@ -256,7 +258,7 @@
                                                         <constraint firstAttribute="width" constant="190" id="ylp-4c-h0J"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbT-3v-J6a">
@@ -265,17 +267,20 @@
                                                         <constraint firstAttribute="width" constant="87" id="3Yy-K8-fMS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="DbT-3v-J6a" firstAttribute="centerY" secondItem="VnK-sb-RHU" secondAttribute="centerY" id="06A-W6-7yx"/>
                                             <constraint firstItem="aRN-Bg-Fym" firstAttribute="leading" secondItem="VnK-sb-RHU" secondAttribute="leading" constant="20" id="9Wo-Bw-GPO"/>
                                             <constraint firstAttribute="trailing" secondItem="DbT-3v-J6a" secondAttribute="trailing" constant="20" id="Ddb-C6-FF9"/>
                                             <constraint firstItem="aRN-Bg-Fym" firstAttribute="centerY" secondItem="VnK-sb-RHU" secondAttribute="centerY" id="Syy-z4-LoK"/>
                                         </constraints>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="interval" destination="DbT-3v-J6a" id="Tjz-S5-nUK"/>
                                             <outlet property="taskName" destination="aRN-Bg-Fym" id="29I-vB-hSS"/>
