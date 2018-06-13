@@ -57,9 +57,8 @@ class HistoryViewController: UIViewController {
         tempWorkItems.removeAll()
         let dayStart = Calendar.current.startOfDay(for: date)
         let dayEnd: Date = {
-            // поправить вытаскивание даты
-            let components = DateComponents(day: 1, second: -1)
-            return Calendar.current.date(byAdding: components, to: dayStart)!
+            return Calendar.current.date(byAdding: .day, value: 1, to: dayStart)!
+            
         }()
         let predicate = NSPredicate(format: "date BETWEEN %@", [dayStart, dayEnd] )
         let selectDayWorkItems = self.realm.objects(WorkItem.self).filter(predicate)
@@ -104,6 +103,8 @@ extension HistoryViewController: FSCalendarDelegate{
         getWorkItemsInDay(date: date)
         
     }
+    
+    
     
 }
 
