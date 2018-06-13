@@ -34,7 +34,7 @@
 		811EB2A420B6F86A009814D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811EB2A620B6F86A009814D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811EB2B820B75ED9009814D5 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
-		811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveTimeViewController.swift; path = /Users/alberttagirov/Documents/XcodeProjects/Stopwatch/Stopwatch/SaveTimeViewController.swift; sourceTree = "<absolute>"; };
+		811EB2BC20B771C3009814D5 /* SaveTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SaveTimeViewController.swift; path = /Users/alberttagirov/Documents/XcodeProjects/TimeTracker/Stopwatch/ViewControllers/SaveTimeViewController.swift; sourceTree = "<absolute>"; };
 		811EB2BF20B8729C009814D5 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		811EB2C120B872A9009814D5 /* WorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItem.swift; sourceTree = "<group>"; };
 		8C0D4AB51F1ABE836A761E1E /* Pods_Stopwatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stopwatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,13 +399,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VNEQ5K7W59;
+				DEVELOPMENT_TEAM = V55HUMW5TF;
 				INFOPLIST_FILE = Stopwatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.albateam.Stopwatch;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.albateam.TimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,13 +418,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VNEQ5K7W59;
+				DEVELOPMENT_TEAM = V55HUMW5TF;
 				INFOPLIST_FILE = Stopwatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.albateam.Stopwatch;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.albateam.TimeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -71,14 +71,14 @@ class HistoryViewController: UIViewController {
     
     
     func sumOfTimeForWorkItem(itemWork: WorkItem){
-        print("\(itemWork.task) \(itemWork.timer) \(itemWork.date)")
-        let itemForSave = WorkItem(task: Task(name: itemWork.task.name), timer: itemWork.timer, date: itemWork.date)
+        print("\(itemWork.taskStr) \(itemWork.timer) \(itemWork.date)")
+        let itemForSave = WorkItem(taskStr: itemWork.taskStr, timer: itemWork.timer, date: itemWork.date)
         
         var newItem = (itemForSave, itemForSave.timer)
         
         guard !tempWorkItems.isEmpty else { return tempWorkItems.append(newItem) }
         
-        if let index = tempWorkItems.index(where: { $0.0.task.name == itemForSave.task.name}){
+        if let index = tempWorkItems.index(where: { $0.0.taskStr == itemForSave.taskStr}){
             newItem = (itemForSave, tempWorkItems[index].1 + itemForSave.timer)
             tempWorkItems.remove(at: index)
         }
@@ -118,7 +118,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "workItemCell") as! WorkItemTableViewCell
-        let name = workItemsInDay[indexPath.item].0.task.name
+        let name = workItemsInDay[indexPath.item].0.taskStr
         let interval = workItemsInDay[indexPath.item].1
         
         cell.taskName.text = name

@@ -14,6 +14,7 @@ class TimerViewController: UIViewController {
     var currTimer: TimeInterval?
     
     @IBOutlet weak var startStopButton: UIButton!
+    @IBOutlet weak var startStopLabel: UILabel!
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -44,12 +45,18 @@ class TimerViewController: UIViewController {
         if watch.isRunning{
             currTimer = watch.elapsTime
             watch.stop()
-            startStopButton.setImage(UIImage(named: "start"), for: .normal)
+            updateStartStopButton(str: "Старт", imageName: "startOval", color: #colorLiteral(red: 0.3215686275, green: 0.7137254902, blue: 0.2509803922, alpha: 1))
             performSegue(withIdentifier: "saveWorkItem", sender: nil)
         }else{
             timerStart()
-        startStopButton.setImage(UIImage(named: "stop"), for: .normal)
+            updateStartStopButton(str: "Стоп", imageName: "stopOval", color: #colorLiteral(red: 0.7647058824, green: 0.2745098039, blue: 0.2745098039, alpha: 1))
         }
+    }
+    
+    private func updateStartStopButton(str: String, imageName: String, color: UIColor){
+        startStopLabel.text = str
+        startStopLabel.textColor = color
+        startStopButton.setImage(UIImage(named: imageName), for: .normal)
     }
     
     private func timerStart(){

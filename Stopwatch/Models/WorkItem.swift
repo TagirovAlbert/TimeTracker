@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 
 class WorkItem: Object{
-    @objc dynamic var task: Task!
+    @objc dynamic var taskStr: String = ""
     @objc dynamic var timer: TimeInterval = TimeInterval()
     @objc dynamic var date: Date = Date()
     
     
-    convenience init(task: Task, timer: TimeInterval, date: Date) {
+    convenience init(taskStr: String, timer: TimeInterval, date: Date) {
         self.init()
-        self.task = task
+        self.taskStr = taskStr
         self.timer = timer
         self.date = date
     }
