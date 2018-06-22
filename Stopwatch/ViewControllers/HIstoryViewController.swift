@@ -30,7 +30,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
     
     override func viewDidLoad() {
-        
+        self.calendar.locale = Locale(identifier: "ru-RU")
         calendar.select(Date())
         getWorkItemsInDay(date: Date())
         let zeroView = UIView(frame: .zero)
