@@ -36,7 +36,6 @@ class HistoryViewController: UIViewController {
         let zeroView = UIView(frame: .zero)
         zeroView.backgroundColor = UIColor.black
         tableView.tableFooterView = zeroView
-        
         super.viewDidLoad()
     
     }
